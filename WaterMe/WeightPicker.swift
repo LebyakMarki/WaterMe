@@ -49,6 +49,7 @@ class WeightPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "Weight") * 30, forKey: "DailyWater")
         }
         UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
+        UserDefaults.standard.set(true, forKey: "SendNotifications")
         
         let date = Date()
         let calendar = Calendar.current

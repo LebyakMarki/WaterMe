@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
         closeButton.layer.cornerRadius = 10
         waterMilimetersStackView.isHidden = true
         closeButton.isHidden = true
+        setupNotifications()
     }
     
     fileprivate func setupConstraints() {
@@ -63,7 +65,30 @@ class ViewController: UIViewController {
             waterMilimetersStackView.isHidden = true
             closeButton.isHidden = true
         }
-        
+    }
+    
+    func setupNotifications() {
+        if UserDefaults.standard.bool(forKey: "SendNotifications") {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            }
+            let content = UNMutableNotificationContent()
+            content.title = "WaterMe Reminder"
+            content.body = "Come back to us and setup your results!"
+            content.sound = .default
+            // Everyday notification for 12:00
+            var date = DateComponents()
+            date.hour = 12
+            date.minute = 00
+            let triger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+            let uuidString = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: triger)
+            center.add(request) { (error) in
+                if error != nil {
+                    print(error!)
+                }
+            }
+        }
     }
     
     @IBAction func hunderedMilimetersPressed(_ sender: UIButton) {
