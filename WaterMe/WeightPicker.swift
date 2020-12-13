@@ -43,6 +43,17 @@ class WeightPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     @IBAction func finishButtonPressed(_ sender: UIButton) {
         UserDefaults.standard.set(Int(pickerData[weightScroller.selectedRow(inComponent: 0)]), forKey: "Weight")
+        if UserDefaults.standard.bool(forKey: "Male") {
+            UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "Weight") * 35, forKey: "DailyWater")
+        } else {
+            UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "Weight") * 30, forKey: "DailyWater")
+        }
+        UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
+        
+        let date = Date()
+        let calendar = Calendar.current
+        UserDefaults.standard.set(calendar.component(.month, from: date), forKey: "LastLoginMonth")
+        UserDefaults.standard.set(calendar.component(.day, from: date), forKey: "LastLoginDay")
     }
     /*
     // MARK: - Navigation

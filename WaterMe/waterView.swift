@@ -11,18 +11,26 @@ import SwiftUI
 
 
 struct WaterPercentView: View {
-    var percent: Int
+    var mililiters: Int
+    let neededToDrink: Int
+    
     @State private var waveOffset = Angle(degrees: 0)
+    
+    init(mililiters: Int, neededToDrink: Int) {
+        self.mililiters = mililiters
+        self.neededToDrink = neededToDrink
+        checkDate()
+    }
     
     var body: some View {
         GeometryReader { geometry in
             GeometryReader { geo in
                 ZStack {
-                    Text("\(Int(self.percent))%")
+                    Text("\(calculatePercent())%")
                         .foregroundColor(.white)
                         .font(Font.system(size: 0.25 * min(geo.size.width, geo.size.height) )).offset(y: 100)
-                    WaterWaves(offset: Angle(degrees: self.waveOffset.degrees), percent: Double(percent)/100)
-                        .fill(percent < 100 ? Color(red: 0.58, green: 0.67, blue: 0.83, opacity: 0.3) : Color(red: 0.38, green: 0.69, blue: 0.35, opacity: 0.3))
+                    WaterWaves(offset: Angle(degrees: self.waveOffset.degrees), percent: Double(calculatePercentInt())/100)
+                        .fill(calculatePercentInt() < 100 ? Color(red: 0.58, green: 0.67, blue: 0.83, opacity: 0.3) : Color(red: 0.38, green: 0.69, blue: 0.35, opacity: 0.3))
                         .clipShape(Circle().scale(0.90)).offset(y: 100)
                 }
                 .padding(.all)
@@ -36,9 +44,35 @@ struct WaterPercentView: View {
         }
     }
     
-    mutating func addPercent(newPercent: Int) {
-        self.percent = newPercent
+    func calculatePercent() -> String {
+        let percentInteger = Int((mililiters * 100) / neededToDrink)
+        return String(percentInteger)
     }
+    
+    func calculatePercentInt() -> Int {
+        return Int((mililiters * 100) / neededToDrink)
+    }
+    
+    mutating func addMilimeters(newMilimeters: Int) {
+        self.mililiters += newMilimeters
+    }
+}
+
+func checkDate() {
+    let date = Date()
+    let calendar = Calendar.current
+    let currentDay = calendar.component(.day, from: date)
+    let currentMonth = calendar.component(.month, from: date)
+    let lastLoginDay = UserDefaults.standard.integer(forKey: "LastLoginDay")
+    let lastLoginMonth = UserDefaults.standard.integer(forKey: "LastLoginMonth")
+    if currentMonth != lastLoginMonth {
+        UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
+    }
+    if currentDay != lastLoginDay {
+        UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
+    }
+    UserDefaults.standard.set(currentMonth, forKey: "LastLoginMonth")
+    UserDefaults.standard.set(currentDay, forKey: "LastLoginDay")
 }
 
 struct WaterWaves: Shape {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1610F27F2586829800D21CC7 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610F27E2586829800D21CC7 /* AccountInfo.swift */; };
 		166AA6242583FD560022FEAD /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166AA6232583FD560022FEAD /* GenderPicker.swift */; };
 		166AA6272584043D0022FEAD /* WeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166AA6262584043D0022FEAD /* WeightPicker.swift */; };
 		1670ADC9257FFAD600CDDFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1670ADC8257FFAD600CDDFB9 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1610F27E2586829800D21CC7 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		166AA6232583FD560022FEAD /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		166AA6262584043D0022FEAD /* WeightPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPicker.swift; sourceTree = "<group>"; };
 		1670ADC5257FFAD600CDDFB9 /* WaterMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				1670ADDD2582466700CDDFB9 /* waterView.swift */,
 				166AA6232583FD560022FEAD /* GenderPicker.swift */,
 				166AA6262584043D0022FEAD /* WeightPicker.swift */,
+				1610F27E2586829800D21CC7 /* AccountInfo.swift */,
 			);
 			path = WaterMe;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				166AA6272584043D0022FEAD /* WeightPicker.swift in Sources */,
 				1670ADCB257FFAD600CDDFB9 /* SceneDelegate.swift in Sources */,
 				166AA6242583FD560022FEAD /* GenderPicker.swift in Sources */,
+				1610F27F2586829800D21CC7 /* AccountInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marki.WaterMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -327,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marki.WaterMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
