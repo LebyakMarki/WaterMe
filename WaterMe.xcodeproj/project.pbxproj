@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1610F27F2586829800D21CC7 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610F27E2586829800D21CC7 /* AccountInfo.swift */; };
 		166AA6242583FD560022FEAD /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166AA6232583FD560022FEAD /* GenderPicker.swift */; };
 		166AA6272584043D0022FEAD /* WeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166AA6262584043D0022FEAD /* WeightPicker.swift */; };
 		1670ADC9257FFAD600CDDFB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1670ADC8257FFAD600CDDFB9 /* AppDelegate.swift */; };
@@ -17,10 +16,11 @@
 		1670ADD2257FFAD600CDDFB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1670ADD1257FFAD600CDDFB9 /* Assets.xcassets */; };
 		1670ADD5257FFAD600CDDFB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1670ADD3257FFAD600CDDFB9 /* LaunchScreen.storyboard */; };
 		1670ADDE2582466700CDDFB9 /* waterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1670ADDD2582466700CDDFB9 /* waterView.swift */; };
+		16D91888258B820300141315 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D91887258B820300141315 /* ImagePicker.swift */; };
+		16D9188B258BE75900141315 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D9188A258BE75900141315 /* AccountSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1610F27E2586829800D21CC7 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		166AA6232583FD560022FEAD /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		166AA6262584043D0022FEAD /* WeightPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPicker.swift; sourceTree = "<group>"; };
 		1670ADC5257FFAD600CDDFB9 /* WaterMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +32,8 @@
 		1670ADD4257FFAD600CDDFB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1670ADD6257FFAD600CDDFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1670ADDD2582466700CDDFB9 /* waterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waterView.swift; sourceTree = "<group>"; };
+		16D91887258B820300141315 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		16D9188A258BE75900141315 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,8 @@
 				1670ADDD2582466700CDDFB9 /* waterView.swift */,
 				166AA6232583FD560022FEAD /* GenderPicker.swift */,
 				166AA6262584043D0022FEAD /* WeightPicker.swift */,
-				1610F27E2586829800D21CC7 /* AccountInfo.swift */,
+				16D91887258B820300141315 /* ImagePicker.swift */,
+				16D9188A258BE75900141315 /* AccountSettings.swift */,
 			);
 			path = WaterMe;
 			sourceTree = "<group>";
@@ -154,8 +157,9 @@
 				1670ADC9257FFAD600CDDFB9 /* AppDelegate.swift in Sources */,
 				166AA6272584043D0022FEAD /* WeightPicker.swift in Sources */,
 				1670ADCB257FFAD600CDDFB9 /* SceneDelegate.swift in Sources */,
+				16D91888258B820300141315 /* ImagePicker.swift in Sources */,
 				166AA6242583FD560022FEAD /* GenderPicker.swift in Sources */,
-				1610F27F2586829800D21CC7 /* AccountInfo.swift in Sources */,
+				16D9188B258BE75900141315 /* AccountSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
