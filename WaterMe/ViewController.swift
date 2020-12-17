@@ -91,16 +91,26 @@ class ViewController: UIViewController {
         }
     }
     
+    func checkIfDone() {
+        if viewCtrl.rootView.mililiters >= viewCtrl.rootView.neededToDrink {
+            let alertVC = UIAlertController(title: "You reached your goal", message: "You did a great job! Keep going and come back tomorrow!", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func hunderedMilimetersPressed(_ sender: UIButton) {
         viewCtrl.rootView.addMilimeters(newMilimeters: 100)
         let currentDrunk = UserDefaults.standard.integer(forKey: "AlreadyDrunk")
         UserDefaults.standard.set(currentDrunk + 100, forKey: "AlreadyDrunk")
+        checkIfDone()
     }
     
     @IBAction func threeHunderedMilimetersPressed(_ sender: UIButton) {
         viewCtrl.rootView.addMilimeters(newMilimeters: 300)
         let currentDrunk = UserDefaults.standard.integer(forKey: "AlreadyDrunk")
         UserDefaults.standard.set(currentDrunk + 300, forKey: "AlreadyDrunk")
+        checkIfDone()
     }
     
     
@@ -108,6 +118,7 @@ class ViewController: UIViewController {
         viewCtrl.rootView.addMilimeters(newMilimeters: 500)
         let currentDrunk = UserDefaults.standard.integer(forKey: "AlreadyDrunk")
         UserDefaults.standard.set(currentDrunk + 500, forKey: "AlreadyDrunk")
+        checkIfDone()
     }
 }
 
