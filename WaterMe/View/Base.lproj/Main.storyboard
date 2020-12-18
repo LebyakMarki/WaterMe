@@ -3,6 +3,7 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -451,6 +452,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9Z-w8-pbs">
+                                <rect key="frame" x="20" y="71" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.27153649930000001" green="0.31234595180000002" blue="0.37647923830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Wbt-wa-CAe"/>
+                                    <constraint firstAttribute="height" constant="40" id="ijg-Md-Hk5"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="calendar" catalog="system" symbolScale="medium"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="27"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c6G-1s-u9Y" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="KuX-Am-mei"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jb-Ov-g3D">
                                 <rect key="frame" x="89" y="210" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -473,8 +490,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JYR-ir-SUy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BXr-PW-WSV"/>
+                            <constraint firstItem="F9Z-w8-pbs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KGZ-Nq-DjN"/>
                             <constraint firstItem="44S-aM-Ezl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.199377" id="PW8-eb-Af6"/>
                             <constraint firstItem="6HW-Nc-knP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XMR-Au-Ckb"/>
+                            <constraint firstItem="F9Z-w8-pbs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="ZCT-rZ-qLW"/>
                             <constraint firstItem="JYR-ir-SUy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bx9-vV-FEi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="62v-ZH-ezd" secondAttribute="trailing" constant="20" id="ggN-WZ-dZp"/>
                             <constraint firstItem="JYR-ir-SUy" firstAttribute="top" secondItem="6HW-Nc-knP" secondAttribute="bottom" constant="15" id="ipa-z0-alR"/>
@@ -489,6 +508,7 @@
                         <outlet property="accountButton" destination="62v-ZH-ezd" id="iL2-Sm-Wjz"/>
                         <outlet property="addWaterButton" destination="JYR-ir-SUy" id="nka-Hy-MpA"/>
                         <outlet property="blurEffect" destination="Odq-9U-AMs" id="KrK-Io-K0U"/>
+                        <outlet property="calendarButton" destination="F9Z-w8-pbs" id="Rqh-iH-QnW"/>
                         <outlet property="closeButton" destination="44S-aM-Ezl" id="ymX-jt-vTa"/>
                         <outlet property="fiveHundredMilimeterButton" destination="Ue8-xN-eQe" id="uoK-w1-elU"/>
                         <outlet property="hundredMilimeterButton" destination="ddr-zf-XSn" id="X8k-iL-60C"/>
@@ -500,6 +520,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73" y="131"/>
+        </scene>
+        <!--Calendar Statistics-->
+        <scene sceneID="Li1-In-uWQ">
+            <objects>
+                <viewController id="c6G-1s-u9Y" customClass="CalendarStatistics" customModule="WaterMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="slJ-E0-4nE">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-Hs-VVU">
+                                <rect key="frame" x="20" y="54" width="53" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="2jZ-7r-ODo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.27153649930000001" green="0.31234595180000002" blue="0.37647923830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="c6G-1s-u9Y" eventType="touchUpInside" id="qIM-5V-Mxs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LeY-N7-ZgN"/>
+                        <color key="backgroundColor" red="0.27153649930000001" green="0.31234595180000002" blue="0.37647923830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="hzJ-Hs-VVU" firstAttribute="leading" secondItem="LeY-N7-ZgN" secondAttribute="leading" constant="20" id="1Y6-ba-GIs"/>
+                            <constraint firstItem="LeY-N7-ZgN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hzJ-Hs-VVU" secondAttribute="trailing" symbolic="YES" id="Kc2-hd-wyD"/>
+                            <constraint firstItem="hzJ-Hs-VVU" firstAttribute="top" secondItem="LeY-N7-ZgN" secondAttribute="top" constant="10" id="xhE-1Y-bhb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="hzJ-Hs-VVU" id="RIQ-cS-I7n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1j-bO-xXB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-782.24299065420553" y="-589.63282937365011"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sbn-fm-E1q">
@@ -703,6 +762,7 @@
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="drops_PNG13512" width="192" height="341.33334350585938"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>

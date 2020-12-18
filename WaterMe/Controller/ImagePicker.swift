@@ -63,5 +63,8 @@ class ImagePicker: UIViewController, UIImagePickerControllerDelegate, UINavigati
         let calendar = Calendar.current
         UserDefaults.standard.set(calendar.component(.month, from: date), forKey: "LastLoginMonth")
         UserDefaults.standard.set(calendar.component(.day, from: date), forKey: "LastLoginDay")
+        
+        let dateArray = [Date]()
+        UserDefaults.standard.set(dateArray, forKey: "DoneDays")
     }
 }

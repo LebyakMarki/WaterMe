@@ -12,6 +12,7 @@ import UserNotifications
 class ViewController: UIViewController {
 
     @IBOutlet weak var addWaterButton: UIButton!
+    @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var hundredMilimeterButton: UIButton!
     @IBOutlet weak var threeHundredMilimeterButton: UIButton!
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         setupConstraints()
         addWaterButton.layer.cornerRadius = 10
         accountButton.layer.cornerRadius = 10
+        calendarButton.layer.cornerRadius = 10
         hundredMilimeterButton.layer.cornerRadius = 10
         threeHundredMilimeterButton.layer.cornerRadius = 10
         fiveHundredMilimeterButton.layer.cornerRadius = 10
@@ -91,8 +93,17 @@ class ViewController: UIViewController {
         }
     }
     
+    func setToDoneDays() {
+        var datesArray = UserDefaults.standard.array(forKey: "DoneDays")  as? [Date] ?? [Date]()
+        if (!datesArray.contains(Date())) {
+            datesArray.append(Date())
+            UserDefaults.standard.set(datesArray, forKey: "DoneDays")
+        }
+    }
+    
     func checkIfDone() {
         if viewCtrl.rootView.mililiters >= viewCtrl.rootView.neededToDrink {
+            setToDoneDays()
             let alertVC = UIAlertController(title: "You reached your goal", message: "You did a great job! Keep going and come back tomorrow!", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             present(alertVC, animated: true, completion: nil)
