@@ -19,7 +19,6 @@ struct WaterPercentView: View {
     init(mililiters: Int, neededToDrink: Int) {
         self.mililiters = mililiters
         self.neededToDrink = neededToDrink
-        checkDate()
     }
     
     var body: some View {
@@ -61,22 +60,6 @@ struct WaterPercentView: View {
     }
 }
 
-func checkDate() {
-    let date = Date()
-    let calendar = Calendar.current
-    let currentDay = calendar.component(.day, from: date)
-    let currentMonth = calendar.component(.month, from: date)
-    let lastLoginDay = UserDefaults.standard.integer(forKey: "LastLoginDay")
-    let lastLoginMonth = UserDefaults.standard.integer(forKey: "LastLoginMonth")
-    if currentMonth != lastLoginMonth {
-        UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
-    }
-    if currentDay != lastLoginDay {
-        UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
-    }
-    UserDefaults.standard.set(currentMonth, forKey: "LastLoginMonth")
-    UserDefaults.standard.set(currentDay, forKey: "LastLoginDay")
-}
 
 struct WaterWaves: Shape {
     var offset: Angle

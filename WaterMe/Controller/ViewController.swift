@@ -32,6 +32,22 @@ class ViewController: UIViewController {
         blurEffect.isHidden = true
         view.backgroundColor = UIColor(red: 0.13, green: 0.16, blue: 0.19, alpha: 1.00)
         viewCtrl.view.backgroundColor = .clear
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let currentDay = calendar.component(.day, from: date)
+        let currentMonth = calendar.component(.month, from: date)
+        let lastLoginDay = UserDefaults.standard.integer(forKey: "LastLoginDay")
+        let lastLoginMonth = UserDefaults.standard.integer(forKey: "LastLoginMonth")
+        if currentMonth != lastLoginMonth {
+            UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
+        }
+        if currentDay != lastLoginDay {
+            UserDefaults.standard.set(0, forKey: "AlreadyDrunk")
+        }
+        UserDefaults.standard.set(currentMonth, forKey: "LastLoginMonth")
+        UserDefaults.standard.set(currentDay, forKey: "LastLoginDay")
+        
         waterView.addSubview(viewCtrl.view)
         setupConstraints()
         addWaterButton.layer.cornerRadius = 10
